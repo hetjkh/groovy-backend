@@ -1,0 +1,18 @@
+{
+  "version": "verified-audio-2026-10",
+  "profiles": [
+    { "name": "Mira Ashford", "email": "mira@groovy.demo", "portrait": "https://randomuser.me/api/portraits/women/44.jpg", "genre": "Fantasy", "location": "London, UK" },
+    { "name": "Julian West", "email": "julian@groovy.demo", "portrait": "https://randomuser.me/api/portraits/men/32.jpg", "genre": "Mystery", "location": "Chicago, USA" },
+    { "name": "Helen Park", "email": "helen@groovy.demo", "portrait": "https://randomuser.me/api/portraits/women/68.jpg", "genre": "Literary", "location": "Seoul, South Korea" },
+    { "name": "Owen Hart", "email": "owen@groovy.demo", "portrait": "https://randomuser.me/api/portraits/men/75.jpg", "genre": "Fiction", "location": "Edinburgh, UK" },
+    { "name": "Ada Quinn", "email": "ada@groovy.demo", "portrait": "https://randomuser.me/api/portraits/women/21.jpg", "genre": "Self-help", "location": "Toronto, Canada" }
+  ],
+  "books": [
+    { "slug": "alice", "title": "Alice's Adventures in Wonderland", "author": "Lewis Carroll", "narrator": "StudioMike", "genre": "Fantasy", "owner": 0, "archiveId": "alicesadventuresinwonderland_1902_librivox", "series": "Wonderland", "seriesIndex": 1, "summary": "Follow Alice down the rabbit hole into a world of curious creatures and impossible conversations." },
+    { "slug": "sherlock", "title": "The Adventures of Sherlock Holmes", "author": "Arthur Conan Doyle", "narrator": "David Clarke", "genre": "Mystery", "owner": 1, "archiveId": "adventuressherlockholmes_v4_1501_librivox", "summary": "Step into Baker Street for the first cases in Sherlock Holmes's celebrated collection of mysteries." },
+    { "slug": "pride", "title": "Pride and Prejudice", "author": "Jane Austen", "narrator": "Elizabeth Klett", "genre": "Literary", "owner": 2, "archiveId": "prideandprejudice_1005_librivox", "summary": "Wit, family expectations, and first impressions meet in Jane Austen's classic story of Elizabeth Bennet." },
+    { "slug": "dracula", "title": "Dracula", "author": "Bram Stoker", "narrator": "LibriVox volunteers", "genre": "Fiction", "owner": 3, "archiveId": "dracula_librivox", "series": "Gothic Library", "seriesIndex": 1, "summary": "Travel toward a remote castle as Jonathan Harker's journal opens a chilling Gothic adventure." },
+    { "slug": "frankenstein", "title": "Frankenstein", "author": "Mary Shelley", "narrator": "Cori Samuel", "genre": "Fiction", "owner": 3, "archiveId": "frankenstein_cs_librivox", "series": "Gothic Library", "seriesIndex": 2, "summary": "Explore ambition, creation, and responsibility in Mary Shelley's influential Gothic novel." },
+    { "slug": "walden", "title": "Walden", "author": "Henry David Thoreau", "narrator": "LibriVox volunteers", "genre": "Self-help", "owner": 4, "archiveId": "walden_librivox", "summary": "Pause beside Walden Pond for reflections on nature, attention, and a simpler life." }
+  ]
+}
