@@ -7,6 +7,7 @@ const User = require('../models/User')
 const { signUser, setAuthCookie, requireAuth, optionalAuth } = require('../middleware/auth')
 
 const { hashToken, sendAccountEmail } = require('../mail')
+const { clientOrigin } = require('../clientOrigins').getClientConfig()
 const router = require('../router')()
 const googleReady = Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET)
 
@@ -133,10 +134,10 @@ router.post('/verify/send', requireAuth, async (req, res) => {
 
 if (googleReady) {
   router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'], session: false }))
-  router.get('/google/callback', passport.authenticate('google', { session: false, failureRedirect: `${process.env.CLIENT_ORIGIN}/login?error=google` }), (req, res) => {
+  router.get('/google/callback', passport.authenticate('google', { session: false, failureRedirect: `${clientOrigin}/login?error=google` }), (req, res) => {
     const token = signUser(req.user)
     setAuthCookie(res, token)
-    res.redirect(`${process.env.CLIENT_ORIGIN}/dashboard`)
+    res.redirect(`${clientOrigin}/dashboard`)
   })
 }
 

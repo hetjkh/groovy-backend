@@ -1,8 +1,9 @@
 const crypto = require('crypto')
+const { getClientConfig } = require('./clientOrigins')
 function hashToken(value) { return crypto.createHash('sha256').update(String(value)).digest('hex') }
 async function sendAccountEmail(email, kind, token) {
   if (!process.env.RESEND_API_KEY || !process.env.MAIL_FROM) return false
-  const origin = process.env.CLIENT_ORIGIN || 'http://localhost:3000'
+  const { clientOrigin: origin } = getClientConfig()
   const url = `${origin}/${kind === 'reset' ? 'reset' : 'verify'}?token=${token}`
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST', signal: AbortSignal.timeout(10000),

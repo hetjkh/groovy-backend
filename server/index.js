@@ -16,12 +16,12 @@ const libraryRoutes = require('./routes/library')
 
 const app = express()
 const server = http.createServer(app)
-const origin = process.env.CLIENT_ORIGIN || 'http://localhost:3000'
+const { corsOptions } = require('./clientOrigins').getClientConfig()
 
-const io = new Server(server, { cors: { origin, credentials: true } })
+const io = new Server(server, { cors: corsOptions })
 app.set('io', io)
 
-app.use(cors({ origin: process.env.NODE_ENV === 'production' ? origin : [origin, 'http://localhost:3000', 'http://127.0.0.1:3000'], credentials: true }))
+app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use(express.json({ limit: '2mb' }))
 app.use(passport.initialize())

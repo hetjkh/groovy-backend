@@ -9,7 +9,7 @@ Express/MongoDB backend for Groovy audiobooks. The frontend is maintained separa
 3. Generate a JWT secret with `node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"` and set `JWT_SECRET`.
 4. Run `npm start` (or `npm run dev` for watch mode). The API defaults to http://localhost:4000; check `GET /health`.
 
-Set `CLIENT_ORIGIN` to the frontend URL and configure the frontend's `NEXT_PUBLIC_API_URL` to point to this API. Production requires HTTPS, a JWT secret of at least 32 characters, and persistent storage for `server/uploads/`. Host the frontend and API on the same site for authentication cookies.
+Set `CLIENT_ORIGIN` to the frontend origin and configure the frontend's `NEXT_PUBLIC_API_URL` to point to this API. Several origins can be comma-separated: the first is used for email links and Google sign-in redirects, and CORS plus Socket.IO allow each listed origin. The response `Access-Control-Allow-Origin` header is only the matching request origin. Production allows only the listed origins, so include local ports explicitly when a local frontend calls a deployed API. A local development API also accepts localhost and 127.0.0.1 on ports 3000 and 3001. Production requires HTTPS, a JWT secret of at least 32 characters, and persistent storage for `server/uploads/`. Host the frontend and API on the same site for authentication cookies.
 
 ## API
 
